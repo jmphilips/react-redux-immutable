@@ -1,4 +1,5 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'react-bootstrap'
 
 export function Todo(props) {
   const { todo } = props;
@@ -14,13 +15,13 @@ export function TodoList(props) {
   return (
     <div className='todo'>
       <input type='text' placeholder='Add todo' />
-      <ul className='todo__list'>
+      <ListGroup className='todo__list'>
         {todos.map(t => (
-          <li key={t.get("id")} className='todo__item'>
+          <ListGroupItem key={t.get("id")} className='todo__item' bsStyle={t.get('isDone') ? 'success' : 'info'}>
             <Todo todo={t} />
-          </li>
+          </ListGroupItem>
         ))}
-      </ul>
+      </ListGroup>
     </div>
   );
 }

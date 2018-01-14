@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { TodoList } from './components';
 import { List, Map } from 'immutable';
+import { PageHeader } from 'react-bootstrap';
 const UUID = require('uuidjs')
 
 const starterTodos = List([
@@ -12,6 +13,9 @@ const starterTodos = List([
 ]);
 
 render(
-  <TodoList todos={starterTodos} />,
+  <div class='container'>
+  <PageHeader>React-Redux-Immutable Todo</PageHeader>
+  <TodoList todos={starterTodos} />
+  </div>,
   document.getElementById('app')
 );
